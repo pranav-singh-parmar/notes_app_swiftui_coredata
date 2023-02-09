@@ -1,5 +1,5 @@
 //
-//  AddForm.swift
+//  AddNoteScreen.swift
 //  NotesApp
 //
 //  Created by Pranav Singh on 08/02/23.
@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct AddForm: View {
+struct AddNoteScreen: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
         Button {
             addItem()
@@ -17,10 +19,8 @@ struct AddForm: View {
     }
     
     private func addItem() {
-        let viewContext = PersistenceController.shared.container.viewContext
-        
-        let newItem = User(context: viewContext)
-        newItem.name = "Hello"
+        let newItem = Note(context: viewContext)
+        newItem.content = "Data"
 
         do {
             try viewContext.save()
@@ -33,8 +33,8 @@ struct AddForm: View {
     }
 }
 
-struct AddForm_Previews: PreviewProvider {
+struct AddNoteScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddForm()
+        AddNoteScreen()
     }
 }

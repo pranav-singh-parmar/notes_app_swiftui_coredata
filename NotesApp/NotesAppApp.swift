@@ -9,13 +9,19 @@ import SwiftUI
 
 @main
 struct NotesAppApp: App {
+    @ObservedObject private var appEnvironmentObject = Singleton.shared.appEnvironmentObject
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ShowUsers()
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView()
+                .environmentObject(appEnvironmentObject)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+}
+
+enum NavigationEnum: Int {
+    case ShowNotesScreen, AddNoteScreen
 }
