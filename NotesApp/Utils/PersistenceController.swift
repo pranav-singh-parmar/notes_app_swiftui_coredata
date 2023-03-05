@@ -8,6 +8,7 @@
 import CoreData
 
 struct PersistenceController {
+    
     static let shared = PersistenceController()
 
 //    static var preview: PersistenceController = {
@@ -28,7 +29,11 @@ struct PersistenceController {
 //        return result
 //    }()
 
-    let container: NSPersistentContainer
+    private let container: NSPersistentContainer
+    
+    var viewContext: NSManagedObjectContext {
+        container.viewContext
+    }
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "NotesApp")
@@ -56,7 +61,7 @@ struct PersistenceController {
     
     func saveViewContext() {
         do {
-            try container.viewContext.save()
+            try viewContext.save()
         } catch {
             // Replace this implementation with code to handle the error appropriately.
             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -68,8 +73,6 @@ struct PersistenceController {
     func fetchEntity<T: NSManagedObject>(_ entity: T.Type,
                                                  withPredicate predicate: NSPredicate? = nil,
                                                  andSortDescriptors sortDescriptors: [NSSortDescriptor]? = nil) -> [T] {
-        
-        let viewContext = PersistenceController.shared.container.viewContext
         
         
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: String(describing: entity.self))

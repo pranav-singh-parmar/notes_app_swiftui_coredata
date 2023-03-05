@@ -1,5 +1,5 @@
 //
-//  NotesAppApp.swift
+//  NotesApp.swift
 //  NotesApp
 //
 //  Created by Pranav Singh on 08/02/23.
@@ -8,20 +8,19 @@
 import SwiftUI
 
 @main
-struct NotesAppApp: App {
+struct NotesApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @ObservedObject private var appEnvironmentObject = Singleton.shared.appEnvironmentObject
     
-    let persistenceController = PersistenceController.shared
+    private let persistenceController = Singleton.shared.persistanceController
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(appEnvironmentObject)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }
-}
-
-enum NavigationEnum: Int {
-    case ShowNotesScreen, AddNoteScreen
 }

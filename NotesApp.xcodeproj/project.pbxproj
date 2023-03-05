@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1512E3D129B50299005A8CE4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D029B50299005A8CE4 /* AppConstants.swift */; };
+		1512E3D429B502F7005A8CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D329B502F7005A8CE4 /* AppDelegate.swift */; };
+		1512E3D629B5032F005A8CE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */; };
 		15CDE2B729956823002AA804 /* AppEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDE2B629956822002AA804 /* AppEnvironmentObject.swift */; };
 		15CDE2B929956898002AA804 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDE2B829956898002AA804 /* Singleton.swift */; };
-		15E9374D2993EED200E7C417 /* NotesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9374C2993EED200E7C417 /* NotesAppApp.swift */; };
+		15E9374D2993EED200E7C417 /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9374C2993EED200E7C417 /* NotesApp.swift */; };
 		15E9374F2993EED200E7C417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9374E2993EED200E7C417 /* ContentView.swift */; };
 		15E937512993EED200E7C417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E937502993EED200E7C417 /* Assets.xcassets */; };
 		15E937542993EED200E7C417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E937532993EED200E7C417 /* Preview Assets.xcassets */; };
@@ -40,10 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1512E3D029B50299005A8CE4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		1512E3D329B502F7005A8CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		15CDE2B629956822002AA804 /* AppEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentObject.swift; sourceTree = "<group>"; };
 		15CDE2B829956898002AA804 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		15E937492993EED200E7C417 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		15E9374C2993EED200E7C417 /* NotesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppApp.swift; sourceTree = "<group>"; };
+		15E9374C2993EED200E7C417 /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
 		15E9374E2993EED200E7C417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		15E937502993EED200E7C417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15E937532993EED200E7C417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -83,11 +89,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1512E3D229B502C1005A8CE4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				15E9374C2993EED200E7C417 /* NotesApp.swift */,
+				1512E3D329B502F7005A8CE4 /* AppDelegate.swift */,
+				1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1512E3D729B5037A005A8CE4 /* Screens and Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				15E9377B29940A8600E7C417 /* AddNoteScreen.swift */,
+				15E9374E2993EED200E7C417 /* ContentView.swift */,
+				15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */,
+			);
+			path = "Screens and Widgets";
+			sourceTree = "<group>";
+		};
+		1512E3D829B50493005A8CE4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		15CDE2B529956811002AA804 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				15CDE2B629956822002AA804 /* AppEnvironmentObject.swift */,
+				1512E3D029B50299005A8CE4 /* AppConstants.swift */,
 				15CDE2B829956898002AA804 /* Singleton.swift */,
+				15E937552993EED200E7C417 /* PersistenceController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -115,13 +150,11 @@
 		15E9374B2993EED200E7C417 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
-				15E9374C2993EED200E7C417 /* NotesAppApp.swift */,
-				15E9374E2993EED200E7C417 /* ContentView.swift */,
-				15E9377B29940A8600E7C417 /* AddNoteScreen.swift */,
-				15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */,
+				1512E3D229B502C1005A8CE4 /* App */,
+				1512E3D729B5037A005A8CE4 /* Screens and Widgets */,
 				15CDE2B529956811002AA804 /* Utils */,
 				15E937502993EED200E7C417 /* Assets.xcassets */,
-				15E937552993EED200E7C417 /* PersistenceController.swift */,
+				1512E3D829B50493005A8CE4 /* Assets */,
 				15E937572993EED200E7C417 /* NotesApp.xcdatamodeld */,
 				15E937522993EED200E7C417 /* Preview Content */,
 			);
@@ -284,12 +317,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				15E937562993EED200E7C417 /* PersistenceController.swift in Sources */,
+				1512E3D129B50299005A8CE4 /* AppConstants.swift in Sources */,
 				15E9374F2993EED200E7C417 /* ContentView.swift in Sources */,
 				15E9378029940DC500E7C417 /* ShowNotesScreen.swift in Sources */,
 				15E9377C29940A8600E7C417 /* AddNoteScreen.swift in Sources */,
-				15E9374D2993EED200E7C417 /* NotesAppApp.swift in Sources */,
+				15E9374D2993EED200E7C417 /* NotesApp.swift in Sources */,
 				15CDE2B929956898002AA804 /* Singleton.swift in Sources */,
+				1512E3D629B5032F005A8CE4 /* SceneDelegate.swift in Sources */,
 				15E937592993EED200E7C417 /* NotesApp.xcdatamodeld in Sources */,
+				1512E3D429B502F7005A8CE4 /* AppDelegate.swift in Sources */,
 				15CDE2B729956823002AA804 /* AppEnvironmentObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,6 +5,8 @@
 //  Created by Pranav Singh on 08/02/23.
 //
 
+//https://blog.canopas.com/swiftui-exploring-navigationstack-and-making-it-useful-80092035fe1c
+
 import SwiftUI
 import CoreData
 
@@ -18,12 +20,12 @@ struct ContentView: View {
         animation: .default)
     private var notes: FetchedResults<Note>
     
-    @State private var path = Singleton.shared.appEnvironmentObject.navigationStackPath
-    //@State private var path: [NavigationEnum] = []
+//    @State private var path = Singleton.shared.appEnvironmentObject.navigationStackPath
+    @State private var path: [NavigationEnum] = []
     @StateObject var loading = Singleton.shared.appEnvironmentObject
 
     var body: some View {
-        NavigationStack(path: $appEnvironmentObject.navigationStackPath) {
+        NavigationStack(path: $path) {
             List {
                 ForEach(notes) { note in
                     NavigationLink {
@@ -43,9 +45,9 @@ struct ContentView: View {
                 ToolbarItem {
                     Button {
 //                        Singleton.shared.appEnvironmentObject.navigationStackPath.append(NavigationEnum.AddNoteScreen)
-                        appEnvironmentObject.navigationStackPath.append(NavigationEnum.AddNoteScreen)
+//                        appEnvironmentObject.navigationStackPath.append(NavigationEnum.AddNoteScreen)
                         //print(appEnvironmentObject.navigationStackPath)
-                        //path.append(.AddNoteScreen)
+                        path.append(.AddNoteScreen)
                         print(appEnvironmentObject.navigationStackPath)
                         print(path)
                     } label: {
