@@ -10,6 +10,12 @@
 		1512E3D129B50299005A8CE4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D029B50299005A8CE4 /* AppConstants.swift */; };
 		1512E3D429B502F7005A8CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D329B502F7005A8CE4 /* AppDelegate.swift */; };
 		1512E3D629B5032F005A8CE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */; };
+		15BAC76D2AB1E55200622785 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BAC76C2AB1E55200622785 /* MyTextField.swift */; };
+		15BAC76F2AB1E5FD00622785 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BAC76E2AB1E5FD00622785 /* Colors.xcassets */; };
+		15BAC7732AB1E7A000622785 /* MyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BAC7722AB1E7A000622785 /* MyTextView.swift */; };
+		15BAC7752AB1E7D300622785 /* AdjustableHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BAC7742AB1E7D300622785 /* AdjustableHeightTextView.swift */; };
+		15BAC7772AB1E9D500622785 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BAC7762AB1E9D500622785 /* Extenstions.swift */; };
+		15BAC7792AB1EA8600622785 /* RoundedRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BAC7782AB1EA8600622785 /* RoundedRectangleStyle.swift */; };
 		15CDE2B729956823002AA804 /* AppEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDE2B629956822002AA804 /* AppEnvironmentObject.swift */; };
 		15CDE2B929956898002AA804 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDE2B829956898002AA804 /* Singleton.swift */; };
 		15E9374D2993EED200E7C417 /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9374C2993EED200E7C417 /* NotesApp.swift */; };
@@ -46,6 +52,12 @@
 		1512E3D029B50299005A8CE4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		1512E3D329B502F7005A8CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		15BAC76C2AB1E55200622785 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		15BAC76E2AB1E5FD00622785 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		15BAC7722AB1E7A000622785 /* MyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextView.swift; sourceTree = "<group>"; };
+		15BAC7742AB1E7D300622785 /* AdjustableHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustableHeightTextView.swift; sourceTree = "<group>"; };
+		15BAC7762AB1E9D500622785 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		15BAC7782AB1EA8600622785 /* RoundedRectangleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleStyle.swift; sourceTree = "<group>"; };
 		15CDE2B629956822002AA804 /* AppEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentObject.swift; sourceTree = "<group>"; };
 		15CDE2B829956898002AA804 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		15E937492993EED200E7C417 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +117,7 @@
 				15E9377B29940A8600E7C417 /* AddNoteScreen.swift */,
 				15E9374E2993EED200E7C417 /* ContentView.swift */,
 				15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */,
+				15BAC76B2AB1E53900622785 /* Widgets */,
 			);
 			path = "Screens and Widgets";
 			sourceTree = "<group>";
@@ -112,8 +125,22 @@
 		1512E3D829B50493005A8CE4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				15E937502993EED200E7C417 /* Assets.xcassets */,
+				15BAC76E2AB1E5FD00622785 /* Colors.xcassets */,
+				15E937572993EED200E7C417 /* NotesApp.xcdatamodeld */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		15BAC76B2AB1E53900622785 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				15BAC76C2AB1E55200622785 /* MyTextField.swift */,
+				15BAC7722AB1E7A000622785 /* MyTextView.swift */,
+				15BAC7782AB1EA8600622785 /* RoundedRectangleStyle.swift */,
+				15BAC7742AB1E7D300622785 /* AdjustableHeightTextView.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		15CDE2B529956811002AA804 /* Utils */ = {
@@ -122,6 +149,7 @@
 				15CDE2B629956822002AA804 /* AppEnvironmentObject.swift */,
 				1512E3D029B50299005A8CE4 /* AppConstants.swift */,
 				15CDE2B829956898002AA804 /* Singleton.swift */,
+				15BAC7762AB1E9D500622785 /* Extenstions.swift */,
 				15E937552993EED200E7C417 /* PersistenceController.swift */,
 			);
 			path = Utils;
@@ -151,11 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				1512E3D229B502C1005A8CE4 /* App */,
+				1512E3D829B50493005A8CE4 /* Assets */,
 				1512E3D729B5037A005A8CE4 /* Screens and Widgets */,
 				15CDE2B529956811002AA804 /* Utils */,
-				15E937502993EED200E7C417 /* Assets.xcassets */,
-				1512E3D829B50493005A8CE4 /* Assets */,
-				15E937572993EED200E7C417 /* NotesApp.xcdatamodeld */,
 				15E937522993EED200E7C417 /* Preview Content */,
 			);
 			path = NotesApp;
@@ -290,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BAC76F2AB1E5FD00622785 /* Colors.xcassets in Resources */,
 				15E937542993EED200E7C417 /* Preview Assets.xcassets in Resources */,
 				15E937512993EED200E7C417 /* Assets.xcassets in Resources */,
 			);
@@ -317,14 +344,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				15E937562993EED200E7C417 /* PersistenceController.swift in Sources */,
+				15BAC7772AB1E9D500622785 /* Extenstions.swift in Sources */,
+				15BAC7732AB1E7A000622785 /* MyTextView.swift in Sources */,
 				1512E3D129B50299005A8CE4 /* AppConstants.swift in Sources */,
 				15E9374F2993EED200E7C417 /* ContentView.swift in Sources */,
+				15BAC76D2AB1E55200622785 /* MyTextField.swift in Sources */,
 				15E9378029940DC500E7C417 /* ShowNotesScreen.swift in Sources */,
 				15E9377C29940A8600E7C417 /* AddNoteScreen.swift in Sources */,
+				15BAC7752AB1E7D300622785 /* AdjustableHeightTextView.swift in Sources */,
 				15E9374D2993EED200E7C417 /* NotesApp.swift in Sources */,
 				15CDE2B929956898002AA804 /* Singleton.swift in Sources */,
 				1512E3D629B5032F005A8CE4 /* SceneDelegate.swift in Sources */,
 				15E937592993EED200E7C417 /* NotesApp.xcdatamodeld in Sources */,
+				15BAC7792AB1EA8600622785 /* RoundedRectangleStyle.swift in Sources */,
 				1512E3D429B502F7005A8CE4 /* AppDelegate.swift in Sources */,
 				15CDE2B729956823002AA804 /* AppEnvironmentObject.swift in Sources */,
 			);

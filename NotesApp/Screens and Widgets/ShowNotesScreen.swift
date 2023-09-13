@@ -12,9 +12,15 @@ struct ShowNotesScreen: View {
     @State private var notes: [Note] = []
     
     var body: some View {
-        List {
-            ForEach(notes) { note in
-                Text(note.content ?? "")
+        ZStack {
+            if notes.isEmpty {
+                Text("No Note Added Yet.")
+            } else {
+                List {
+                    ForEach(notes) { note in
+                        Text(note.content ?? "")
+                    }
+                }
             }
         }.onAppear {
             fetchNotes()

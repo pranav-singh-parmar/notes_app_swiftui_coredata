@@ -10,31 +10,31 @@ import CoreData
 struct PersistenceController {
     
     static let shared = PersistenceController()
-
-//    static var preview: PersistenceController = {
-//        let result = PersistenceController(inMemory: true)
-//        let viewContext = result.container.viewContext
-//        for _ in 0..<10 {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//        }
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            let nsError = error as NSError
-//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//        }
-//        return result
-//    }()
-
+    
+    //    static var preview: PersistenceController = {
+    //        let result = PersistenceController(inMemory: true)
+    //        let viewContext = result.container.viewContext
+    //        for _ in 0..<10 {
+    //            let newItem = Item(context: viewContext)
+    //            newItem.timestamp = Date()
+    //        }
+    //        do {
+    //            try viewContext.save()
+    //        } catch {
+    //            // Replace this implementation with code to handle the error appropriately.
+    //            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+    //            let nsError = error as NSError
+    //            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    //        }
+    //        return result
+    //    }()
+    
     private let container: NSPersistentContainer
     
     var viewContext: NSManagedObjectContext {
         container.viewContext
     }
-
+    
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "NotesApp")
         if inMemory {
@@ -44,7 +44,7 @@ struct PersistenceController {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -71,8 +71,8 @@ struct PersistenceController {
     }
     
     func fetchEntity<T: NSManagedObject>(_ entity: T.Type,
-                                                 withPredicate predicate: NSPredicate? = nil,
-                                                 andSortDescriptors sortDescriptors: [NSSortDescriptor]? = nil) -> [T] {
+                                         withPredicate predicate: NSPredicate? = nil,
+                                         andSortDescriptors sortDescriptors: [NSSortDescriptor]? = nil) -> [T] {
         
         
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: String(describing: entity.self))
@@ -82,7 +82,7 @@ struct PersistenceController {
         if let sortDescriptors, !sortDescriptors.isEmpty {
             fetchRequest.sortDescriptors = sortDescriptors
         }
-
+        
         do {
             let result = try viewContext.fetch(fetchRequest)
             return result as! [T]

@@ -47,7 +47,7 @@ struct ContentView: View {
 //                        Singleton.shared.appEnvironmentObject.navigationStackPath.append(NavigationEnum.AddNoteScreen)
 //                        appEnvironmentObject.navigationStackPath.append(NavigationEnum.AddNoteScreen)
                         //print(appEnvironmentObject.navigationStackPath)
-                        path.append(.AddNoteScreen)
+                        path.append(.addNoteScreen)
                         print(appEnvironmentObject.navigationStackPath)
                         print(path)
                     } label: {
@@ -56,7 +56,7 @@ struct ContentView: View {
                 }
             }
             .navigationDestination(for: NavigationEnum.self) { navigationEnum in
-                if navigationEnum == .AddNoteScreen {
+                if navigationEnum == .addNoteScreen {
                     AddNoteScreen()
                 }
             }
