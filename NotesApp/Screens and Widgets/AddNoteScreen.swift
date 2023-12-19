@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 //https://stackoverflow.com/questions/37344822/saving-image-and-then-loading-it-in-swift-ios
 struct AddNoteScreen: View {
@@ -14,6 +15,7 @@ struct AddNoteScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State private var title: String = ""
+    @State private var noteContent: String = ""
     
     private let isFromUpdate: Bool
     
@@ -22,14 +24,13 @@ struct AddNoteScreen: View {
     
     init(note: Note? = nil) {
         //self._note = State(wrappedValue: Note(context: Singleton.shared.persistanceController.viewContext))
-//        if let note {
-//            self.isFromUpdate = true
-//            self.note.title = note.title
-//            self.note.content = note.content
-//            self.note.image = note.image
-//        } else {
+        if let note {
+            self.isFromUpdate = true
+            self.title = note.title ?? ""
+            self.noteContent = note.content ?? ""
+        } else {
             self.isFromUpdate = false
-//        }
+        }
     }
     
     var body: some View {
@@ -38,13 +39,15 @@ struct AddNoteScreen: View {
                 
                 MyTextField("Add Title", text: $title)
                     .roundedRectangleStyle()
-                //MyTextView("Add Note", text: $note.content.toUnwrapped(defaultValue: ""))
+                
+                MyTextView("Add Note", text: $noteContent)
                 
                 Button {
                     addUpdateNote()
                 } label: {
                     Text(isFromUpdate ? "Update" : "Add")
                 }
+                
             }.padding(padding)
         }.onAppear {
             
