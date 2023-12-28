@@ -31,9 +31,11 @@ struct ContentView: View {
                     NavigationLink {
                         //Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                         Text(note.content ?? "")
+                            .font(.mulishBody)
                     } label: {
                         //Text(item.timestamp!, formatter: itemFormatter)
                         Text(note.content ?? "")
+                            .font(.mulishBody)
                     }
                 }
                 .onDelete(perform: deleteItems)

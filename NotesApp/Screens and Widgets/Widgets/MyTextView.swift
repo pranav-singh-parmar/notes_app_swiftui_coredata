@@ -26,9 +26,9 @@ struct MyTextView: View {
     init(_ placeHolder: String,
          text: Binding<String>,
          isAdjustableTV: Bool = false,
-         adjustableTVHeight: Binding<CGFloat> = .constant(20),
+         adjustableTVHeight: Binding<CGFloat> = .constant(40),
          adjustableTVMaxHeight: CGFloat = 100,
-         uiFont: UIFont = .systemFont(ofSize: 15),
+         uiFont: UIFont = .mulishCallout,
          textColor: Color = .blackColorForAllModes,
          maxLength: Int? = nil,
          keyboardType: UIKeyboardType = UIKeyboardType.default,
@@ -61,17 +61,7 @@ struct MyTextView: View {
             }
             
             Group {
-                if !isAdjustableTV {
-                    TextEditor(text: $text)
-                        .font(Font(uiFont))
-                        .foregroundColor(textColor)
-                        .accentColor(.primaryColor)
-                        .multilineTextAlignment(.leading)
-                        .frame(minHeight: 150, maxHeight: 150)
-//                        .colorMultiply(Color.lightGrayColor)
-//                        .background(Color.lightGrayColor)
-                        .cornerRadius(5)
-                } else {
+                if isAdjustableTV {
                     AdjustableHeightTextView(height: $adjustableTVHeight,
                                              maxheight: adjustableTVMaxHeight,
                                              text: $text,
@@ -81,8 +71,19 @@ struct MyTextView: View {
                                              autoCapitalization: autoCapitalization,
                                              cursorColor: accentColor)
                     .frame(height: adjustableTVHeight)
+                } else {
+                    TextEditor(text: $text)
+                        .transparentScrolling()
+                        .font(Font(uiFont))
+                        .foregroundColor(textColor)
+                        .accentColor(.primaryColor)
+                        .multilineTextAlignment(.leading)
+                        .frame(minHeight: 150, maxHeight: 150)
+//                        .colorMultiply(.clear)
+//                        .background(Color.lightGrayColor)
+                        .cornerRadius(5)
                 }
-            }.opacity(showPlaceholder ? 0.5 : 1)
+            }//.opacity(showPlaceholder ? 0.01 : 1)
         }.onReceive(Just(text)) { newValue in
             onReceive(newValue: newValue)
         }
@@ -92,6 +93,13 @@ struct MyTextView: View {
         if let maxLength {
             text = "\(text.prefix(maxLength))"
         }
+    }
+    
+    var isIOS15Aviable: Bool {
+        if #available(iOS 15, *) {
+            return true
+        }
+        return false
     }
 }
 

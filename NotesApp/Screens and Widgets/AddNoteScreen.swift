@@ -41,11 +41,14 @@ struct AddNoteScreen: View {
                     .roundedRectangleStyle()
                 
                 MyTextView("Add Note", text: $noteContent)
+                    .roundedRectangleStyle(contentVerticalPadding: 10,
+                        contentHorizontalPadding: 6)
                 
                 Button {
                     addUpdateNote()
                 } label: {
                     Text(isFromUpdate ? "Update" : "Add")
+                        .font(.mulishBody)
                 }
                 
             }.padding(padding)

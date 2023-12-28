@@ -26,7 +26,7 @@ struct MyTextField: View {
     //MARK: - init
     init(_ placeHolder: String,
          text: Binding<String>,
-         font: Font = .callout,
+         font: Font = .mulishCallout,
          textColor: Color = .blackColor,
          cursorColor: Color = .primaryColor,
          keyboardType: UIKeyboardType = UIKeyboardType.default,

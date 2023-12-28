@@ -15,10 +15,12 @@ struct ShowNotesScreen: View {
         ZStack {
             if notes.isEmpty {
                 Text("No Note Added Yet.")
+                    .font(.mulishBody)
             } else {
                 List {
                     ForEach(notes) { note in
                         Text(note.content ?? "")
+                            .font(.mulishBody)
                     }
                 }
             }
