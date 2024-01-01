@@ -13,6 +13,7 @@ struct NotesApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @ObservedObject private var appEnvironmentObject = Singleton.shared.appEnvironmentObject
+    @ObservedObject private var navigator = Navigator<NavigationEnum>()
     
     private let persistenceController = Singleton.shared.persistanceController
 
@@ -20,6 +21,7 @@ struct NotesApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(appEnvironmentObject)
+                .environmentObject(navigator)
                 .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }

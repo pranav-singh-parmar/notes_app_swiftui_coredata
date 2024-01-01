@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ShowNotesScreen: View {
+    @EnvironmentObject var navigator: Navigator<NavigationEnum>
+    
     @State private var notes: [Note] = []
     
     var body: some View {
@@ -22,6 +24,17 @@ struct ShowNotesScreen: View {
                         Text(note.content ?? "")
                             .font(.mulishBody)
                     }
+                }
+            }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
+            ToolbarItem {
+                Button {
+                    navigator.push(.addNoteScreen)
+                } label: {
+                    Label("Add Item", systemImage: "plus")
                 }
             }
         }.onAppear {

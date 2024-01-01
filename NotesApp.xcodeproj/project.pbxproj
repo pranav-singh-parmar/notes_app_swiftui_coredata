@@ -10,6 +10,8 @@
 		1512E3D129B50299005A8CE4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D029B50299005A8CE4 /* AppConstants.swift */; };
 		1512E3D429B502F7005A8CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D329B502F7005A8CE4 /* AppDelegate.swift */; };
 		1512E3D629B5032F005A8CE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */; };
+		153053992B4307290045CCD0 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153053982B4307290045CCD0 /* Navigator.swift */; };
+		1530539B2B43086C0045CCD0 /* OldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530539A2B43086C0045CCD0 /* OldContentView.swift */; };
 		159F60D42B3DE826003A7DB7 /* Mulish-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 159F60CE2B3DE826003A7DB7 /* Mulish-Light.ttf */; };
 		159F60D52B3DE826003A7DB7 /* Mulish-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 159F60CF2B3DE826003A7DB7 /* Mulish-ExtraLight.ttf */; };
 		159F60D62B3DE826003A7DB7 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 159F60D02B3DE826003A7DB7 /* Mulish-Bold.ttf */; };
@@ -59,6 +61,8 @@
 		1512E3D029B50299005A8CE4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		1512E3D329B502F7005A8CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1512E3D529B5032F005A8CE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		153053982B4307290045CCD0 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		1530539A2B43086C0045CCD0 /* OldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldContentView.swift; sourceTree = "<group>"; };
 		159F60CE2B3DE826003A7DB7 /* Mulish-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Light.ttf"; sourceTree = "<group>"; };
 		159F60CF2B3DE826003A7DB7 /* Mulish-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraLight.ttf"; sourceTree = "<group>"; };
 		159F60D02B3DE826003A7DB7 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
@@ -129,8 +133,10 @@
 		1512E3D729B5037A005A8CE4 /* Screens and Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				153053972B4307000045CCD0 /* Navigation */,
 				15E9377B29940A8600E7C417 /* AddNoteScreen.swift */,
 				15E9374E2993EED200E7C417 /* ContentView.swift */,
+				1530539A2B43086C0045CCD0 /* OldContentView.swift */,
 				15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */,
 				15BAC76B2AB1E53900622785 /* Widgets */,
 			);
@@ -146,6 +152,14 @@
 				15E937572993EED200E7C417 /* NotesApp.xcdatamodeld */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		153053972B4307000045CCD0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				153053982B4307290045CCD0 /* Navigator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		159F60CD2B3DE768003A7DB7 /* Fonts */ = {
@@ -388,9 +402,11 @@
 				15E9374F2993EED200E7C417 /* ContentView.swift in Sources */,
 				15BAC76D2AB1E55200622785 /* MyTextField.swift in Sources */,
 				15E9378029940DC500E7C417 /* ShowNotesScreen.swift in Sources */,
+				1530539B2B43086C0045CCD0 /* OldContentView.swift in Sources */,
 				15E9377C29940A8600E7C417 /* AddNoteScreen.swift in Sources */,
 				15BAC7752AB1E7D300622785 /* AdjustableHeightTextView.swift in Sources */,
 				15E9374D2993EED200E7C417 /* NotesApp.swift in Sources */,
+				153053992B4307290045CCD0 /* Navigator.swift in Sources */,
 				15CDE2B929956898002AA804 /* Singleton.swift in Sources */,
 				1512E3D629B5032F005A8CE4 /* SceneDelegate.swift in Sources */,
 				15E937592993EED200E7C417 /* NotesApp.xcdatamodeld in Sources */,

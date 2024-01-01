@@ -13,6 +13,7 @@ struct AddNoteScreen: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var navigator: Navigator<NavigationEnum>
     
     @State private var title: String = ""
     @State private var noteContent: String = ""
@@ -58,8 +59,12 @@ struct AddNoteScreen: View {
     }
     
     private func addUpdateNote() {
+        let note = Note(context: viewContext)
+        note.title = title
+        note.content = noteContent
         Singleton.shared.persistanceController.saveViewContext()
-        self.presentationMode.wrappedValue.dismiss()
+        //self.presentationMode.wrappedValue.dismiss()
+        navigator.pop()
     }
 }
 

@@ -8,6 +8,15 @@
 import UIKit
 import SwiftUI
 
+//MARK: - Enums
+enum NavigationEnum: Int {
+    case showNotesScreen, addNoteScreen
+}
+
+enum MulishFontEnum {
+    case extraLight, light, regular, medium, semiBold, bold
+}
+
 //MARK: - App Colors
 //MARK: - UIColor
 extension UIColor {
@@ -157,14 +166,4 @@ extension UIFont {
     public static let mulishFootnote: UIFont = .mulishFont(.regular, ofSize: 13)
     public static let mulishCaption: UIFont = .mulishFont(.regular, ofSize: 12)
     public static let mulishCaption2: UIFont = .mulishFont(.regular, ofSize: 11)
-}
-
-
-//MARK: - Enums
-enum NavigationEnum: Int {
-    case showNotesScreen, addNoteScreen
-}
-
-enum MulishFontEnum {
-    case extraLight, light, regular, medium, semiBold, bold
 }
