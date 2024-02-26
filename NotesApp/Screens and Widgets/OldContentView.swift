@@ -52,7 +52,7 @@ struct OldContentView: View {
                         print(appEnvironmentObject.navigationStackPath)
                         print(path)
                     } label: {
-                        Label("Add Item", systemImage: "plus")
+                        Label(AppTexts.newNote, systemImage: "plus")
                     }
                 }
             }

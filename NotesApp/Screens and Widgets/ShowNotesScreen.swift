@@ -16,7 +16,7 @@ struct ShowNotesScreen: View {
     var body: some View {
         ZStack {
             if notes.isEmpty {
-                Text("No Note Added Yet.")
+                Text(AppTexts.noNoteAddedYet)
                     .font(.mulishBody)
             } else {
                 List {
@@ -34,7 +34,7 @@ struct ShowNotesScreen: View {
                 Button {
                     navigator.push(.addNoteScreen)
                 } label: {
-                    Label("Add Item", systemImage: "plus")
+                    Label(AppTexts.newNote, systemImage: "plus")
                 }
             }
         }.onAppear {

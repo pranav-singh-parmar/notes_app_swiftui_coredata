@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 //https://stackoverflow.com/questions/37344822/saving-image-and-then-loading-it-in-swift-ios
-struct AddNoteScreen: View {
+struct AddUpdateNoteScreen: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -23,12 +23,15 @@ struct AddNoteScreen: View {
     private let spacing: CGFloat = 10
     private let padding: CGFloat = 16
     
+    private let noteFromPreviousScreen: Note? = nil
+    
     init(note: Note? = nil) {
         //self._note = State(wrappedValue: Note(context: Singleton.shared.persistanceController.viewContext))
-        if let note {
+        noteFromPreviousScreen = note
+        if let noteFromPreviousScreen {
             self.isFromUpdate = true
-            self.title = note.title ?? ""
-            self.noteContent = note.content ?? ""
+            self.title = noteFromPreviousScreen.title ?? ""
+            self.noteContent = noteFromPreviousScreen.content ?? ""
         } else {
             self.isFromUpdate = false
         }
@@ -38,17 +41,17 @@ struct AddNoteScreen: View {
         ScrollView {
             VStack {
                 
-                MyTextField("Add Title", text: $title)
+                MyTextField(AppTexts.addTitle, text: $title)
                     .roundedRectangleStyle()
                 
-                MyTextView("Add Note", text: $noteContent)
+                MyTextView(AppTexts.addTitle, text: $noteContent)
                     .roundedRectangleStyle(contentVerticalPadding: 10,
                         contentHorizontalPadding: 6)
                 
                 Button {
                     addUpdateNote()
                 } label: {
-                    Text(isFromUpdate ? "Update" : "Add")
+                    Text(isFromUpdate ? AppTexts.update : AppTexts.add)
                         .font(.mulishBody)
                 }
                 
@@ -59,17 +62,24 @@ struct AddNoteScreen: View {
     }
     
     private func addUpdateNote() {
-        let note = Note(context: viewContext)
-        note.title = title
-        note.content = noteContent
-        Singleton.shared.persistanceController.saveViewContext()
+        if isFromUpdate {
+            noteFromPreviousScreen?.id
+            noteFromPreviousScreen?.title = title
+            noteFromPreviousScreen?.content = noteContent
+//            noteFromPreviousScreen.conte
+        } else {
+            let note = Note(context: viewContext)
+            note.title = title
+            note.content = noteContent
+            Singleton.shared.persistanceController.saveViewContext()
+        }
         //self.presentationMode.wrappedValue.dismiss()
         navigator.pop()
     }
 }
 
-struct AddNoteScreen_Previews: PreviewProvider {
+struct AddUpdateNoteScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddNoteScreen()
+        AddUpdateNoteScreen()
     }
 }

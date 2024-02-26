@@ -85,7 +85,10 @@ struct PersistenceController {
         
         do {
             let result = try viewContext.fetch(fetchRequest)
-            return result as! [T]
+            if let result = result as? [T] {
+                return result
+            }
+            return []
         } catch {
             // Replace this implementation with code to handle the error appropriately.
             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
