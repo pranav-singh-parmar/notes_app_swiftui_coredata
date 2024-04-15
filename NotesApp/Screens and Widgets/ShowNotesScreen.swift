@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ShowNotesScreen: View {
-    @EnvironmentObject var navigator: Navigator<NavigationEnum>
+    @EnvironmentObject var navigator: Navigator
     
     @State private var notes: [Note] = []
     
@@ -21,15 +21,30 @@ struct ShowNotesScreen: View {
             } else {
                 List {
                     ForEach(notes) { note in
-                        Text(note.content ?? "")
-                            .font(.mulishBody)
+                        Button {
+                            navigator.push(.updateNoteScreen(note))
+                        } label: {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(note.title ?? "")
+                                        .font(.mulishHeadline)
+                                    
+                                    Text(note.content ?? "")
+                                        .font(.mulishBody)
+                                }
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.right")
+                            }.contentShape(Rectangle())
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
             }
         }.toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                EditButton()
-            }
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                EditButton()
+//            }
             ToolbarItem {
                 Button {
                     navigator.push(.addNoteScreen)

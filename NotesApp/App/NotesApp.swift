@@ -13,7 +13,7 @@ struct NotesApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @ObservedObject private var appEnvironmentObject = Singleton.shared.appEnvironmentObject
-    @ObservedObject private var navigator = Navigator<NavigationEnum>()
+    @ObservedObject private var navigator = Navigator()
     
     private let persistenceController = Singleton.shared.persistanceController
 

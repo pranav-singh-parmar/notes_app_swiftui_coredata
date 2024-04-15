@@ -58,7 +58,7 @@ struct OldContentView: View {
             }
             .navigationDestination(for: NavigationEnum.self) { navigationEnum in
                 if navigationEnum == .addNoteScreen {
-                    AddNoteScreen()
+                    AddUpdateNoteScreen()
                 }
             }
         }

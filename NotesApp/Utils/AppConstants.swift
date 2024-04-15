@@ -9,8 +9,8 @@ import UIKit
 import SwiftUI
 
 //MARK: - Enums
-enum NavigationEnum: Int {
-    case showNotesScreen, addNoteScreen
+enum NavigationEnum: Hashable {
+    case showNotesScreen, addNoteScreen, updateNoteScreen(Note)
 }
 
 enum MulishFontEnum {
@@ -155,12 +155,12 @@ extension UIFont {
         }
     }
     
-    public static let mulishLargeTitle: UIFont = .mulishFont(.medium, ofSize: 35)
+    public static let mulishLargeTitle: UIFont = .mulishFont(.semiBold, ofSize: 35)
     public static let mulishTitle: UIFont = .mulishFont(.medium, ofSize: 28)
     public static let mulishTitle2: UIFont = .mulishFont(.medium, ofSize: 22)
     public static let mulishTitle3: UIFont = .mulishFont(.medium, ofSize: 20)
-    public static let mulishHeadline: UIFont = .mulishFont(.semiBold, ofSize: 17)
-    public static let mulishSubheadline: UIFont = .mulishFont(.regular, ofSize: 15)
+    public static let mulishHeadline: UIFont = .mulishFont(.bold, ofSize: 17)
+    public static let mulishSubheadline: UIFont = .mulishFont(.medium, ofSize: 15)
     public static let mulishBody: UIFont = .mulishFont(.regular, ofSize: 17)
     public static let mulishCallout: UIFont = .mulishFont(.regular, ofSize: 15)
     public static let mulishFootnote: UIFont = .mulishFont(.regular, ofSize: 13)

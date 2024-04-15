@@ -13,17 +13,17 @@ struct AddUpdateNoteScreen: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var navigator: Navigator<NavigationEnum>
+    @EnvironmentObject var navigator: Navigator
     
-    @State private var title: String = ""
-    @State private var noteContent: String = ""
+    @State private var title: String
+    @State private var noteContent: String
     
     private let isFromUpdate: Bool
     
     private let spacing: CGFloat = 10
     private let padding: CGFloat = 16
     
-    private let noteFromPreviousScreen: Note? = nil
+    private let noteFromPreviousScreen: Note?
     
     init(note: Note? = nil) {
         //self._note = State(wrappedValue: Note(context: Singleton.shared.persistanceController.viewContext))
@@ -34,6 +34,8 @@ struct AddUpdateNoteScreen: View {
             self.noteContent = noteFromPreviousScreen.content ?? ""
         } else {
             self.isFromUpdate = false
+            self.title = ""
+            self.noteContent = ""
         }
     }
     
@@ -56,17 +58,14 @@ struct AddUpdateNoteScreen: View {
                 }
                 
             }.padding(padding)
-        }.onAppear {
-            
         }
     }
     
     private func addUpdateNote() {
         if isFromUpdate {
-            noteFromPreviousScreen?.id
             noteFromPreviousScreen?.title = title
             noteFromPreviousScreen?.content = noteContent
-//            noteFromPreviousScreen.conte
+            Singleton.shared.persistanceController.saveViewContext()
         } else {
             let note = Note(context: viewContext)
             note.title = title

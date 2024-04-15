@@ -14,15 +14,16 @@ import CoreData
 
 struct ContentView: View {
 
-    @EnvironmentObject var navigator: Navigator<NavigationEnum>
+    @EnvironmentObject var navigator: Navigator
     
     var body: some View {
         NavigationStack(path: $navigator.paths) {
             ShowNotesScreen()
                 .navigationDestination(for: NavigationEnum.self) { navigation in
                     switch navigation {
-                    case .addNoteScreen: AddNoteScreen()
                     case .showNotesScreen: ShowNotesScreen()
+                    case .addNoteScreen: AddUpdateNoteScreen()
+                    case .updateNoteScreen(let note): AddUpdateNoteScreen(note: note)
                     }
                 }
         }

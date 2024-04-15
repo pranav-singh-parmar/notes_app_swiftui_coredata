@@ -36,7 +36,7 @@
 		15E937632993EED300E7C417 /* NotesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E937622993EED300E7C417 /* NotesAppTests.swift */; };
 		15E9376D2993EED300E7C417 /* NotesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9376C2993EED300E7C417 /* NotesAppUITests.swift */; };
 		15E9376F2993EED300E7C417 /* NotesAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9376E2993EED300E7C417 /* NotesAppUITestsLaunchTests.swift */; };
-		15E9377C29940A8600E7C417 /* AddNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9377B29940A8600E7C417 /* AddNoteScreen.swift */; };
+		15E9377C29940A8600E7C417 /* AddUpdateNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9377B29940A8600E7C417 /* AddUpdateNoteScreen.swift */; };
 		15E9378029940DC500E7C417 /* ShowNotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +91,7 @@
 		15E937682993EED300E7C417 /* NotesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E9376C2993EED300E7C417 /* NotesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppUITests.swift; sourceTree = "<group>"; };
 		15E9376E2993EED300E7C417 /* NotesAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		15E9377B29940A8600E7C417 /* AddNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteScreen.swift; sourceTree = "<group>"; };
+		15E9377B29940A8600E7C417 /* AddUpdateNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateNoteScreen.swift; sourceTree = "<group>"; };
 		15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNotesScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				153053972B4307000045CCD0 /* Navigation */,
-				15E9377B29940A8600E7C417 /* AddNoteScreen.swift */,
+				15E9377B29940A8600E7C417 /* AddUpdateNoteScreen.swift */,
 				15E9374E2993EED200E7C417 /* ContentView.swift */,
 				1530539A2B43086C0045CCD0 /* OldContentView.swift */,
 				15E9377F29940DC500E7C417 /* ShowNotesScreen.swift */,
@@ -403,7 +403,7 @@
 				15BAC76D2AB1E55200622785 /* MyTextField.swift in Sources */,
 				15E9378029940DC500E7C417 /* ShowNotesScreen.swift in Sources */,
 				1530539B2B43086C0045CCD0 /* OldContentView.swift in Sources */,
-				15E9377C29940A8600E7C417 /* AddNoteScreen.swift in Sources */,
+				15E9377C29940A8600E7C417 /* AddUpdateNoteScreen.swift in Sources */,
 				15BAC7752AB1E7D300622785 /* AdjustableHeightTextView.swift in Sources */,
 				15E9374D2993EED200E7C417 /* NotesApp.swift in Sources */,
 				153053992B4307290045CCD0 /* Navigator.swift in Sources */,

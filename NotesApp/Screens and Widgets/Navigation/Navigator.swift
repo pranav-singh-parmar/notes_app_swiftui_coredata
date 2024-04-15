@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class Navigator<T: Hashable>: ObservableObject {
-    @Published var paths: [T] = []
+final class Navigator: ObservableObject {
+    @Published var paths: [NavigationEnum] = []
     
-    func push(_ path: T) {
+    func push(_ path: NavigationEnum) {
         paths.append(path)
     }
     
